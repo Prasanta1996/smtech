@@ -1,0 +1,296 @@
+.page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eee;
+  }
+  
+  .roundlogo {
+    position: absolute;
+    left: calc((840px - 100px) / 2);
+    top: calc((920px - 100px) / 2);
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    background: #fff url('../image/logo/sm_b.png') center no-repeat;
+      center center no-repeat;
+    background-size: 80%;
+    box-shadow: inset 1px 1px 4px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .middle,
+  .outer,
+  .inner {
+    position: absolute;
+    pointer-events: none;
+  }
+  
+  .inner {
+    left: calc((840px - 200px) / 2);
+    top: calc((920px - 200px) / 2);
+    width: 200px;
+    height: 200px;
+    animation: rotate 20s linear infinite;
+  }
+  .middle {
+    left: calc((840px - 320px) / 2);
+    top: calc((920px - 320px) / 2);
+    width: 320px;
+    height: 320px;
+    animation: rotate 35s linear infinite;
+  }
+  
+  .outer {
+    left: calc((840px - 440px) / 2);
+    top: calc((920px - 440px) / 2);
+    width: 440px;
+    height: 440px;
+    animation: rotate 45s reverse linear infinite;
+  }
+  
+  .middle.dots,
+  .outer.dots,
+  .inner.dots {
+    border: 0.5px solid #000;
+    border-radius: 500px;
+  }
+  
+  .middle.dots {
+    border-color: red;
+  }
+  
+  .dot {
+      position: absolute;
+      width: 55px;
+      height: 55px;
+      left: -24px;
+      top: calc(50% - 24px);
+      background: center no-repeat;
+      background-size: 85%;
+  }
+  
+  .target {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    left: -32px;
+    top: calc(50% - 32px);
+    border-radius: 32px;
+    pointer-events: auto;
+    cursor: pointer;
+  }
+  
+  .dot:nth-child(2) {
+    left: calc(100% - 24px);
+  }
+  .target:nth-child(2) {
+    left: calc(100% - 32px);
+  }
+  .inner .dot,
+  .inner .target {
+    animation: rotate 20s reverse linear infinite;
+  }
+  .middle .dot,
+  .middle .target {
+    animation: rotate 35s reverse linear infinite;
+  }
+  .outer .dot,
+  .outer .target {
+    animation: rotate 45s linear infinite;
+  }
+  
+  .tooltip {
+      display: block;
+      position: absolute;
+      width: 170px;
+      height: 26px;
+      left: calc(50% - 85px);
+      top: 27px;
+      color: #000;
+      text-align: center;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 26px;
+      opacity: 0;
+      transition: top 0.15s ease-out, opacity 0.15s ease-out;
+      pointer-events: none;
+  }
+  
+  .target:hover .tooltip {
+    top: -25px;
+    opacity: 1;
+  }
+  
+  @keyframes rotate {
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (max-width: 992px) {
+    .row {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .col-lg-5 {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px; /* Add margin between columns */
+    }
+    
+    .roundlogo {
+      position: static; /* Remove absolute positioning */
+      margin: 10px auto; /* Center the logo */
+    }
+    
+    .inner,
+    .middle,
+    .outer {
+      position: relative; /* Reset position */
+      margin: 20px auto; /* Center the rings */
+      left: auto;
+      top: auto;
+      animation: none; /* Disable animation for smaller screens */
+    }
+
+    .inner {
+      left: calc((200px - 200px) / 2);
+      top: calc((200px - 540px) / 2);
+      width: 200px;
+      height: 200px;
+      animation: rotate 20s linear infinite;
+    }
+    .middle {
+      left: calc((200px - 200px) / 2);
+      top: calc((200px - 1100px) / 2);
+      width: 320px;
+      height: 320px;
+      animation: rotate 35s linear infinite;
+    }
+    
+    .outer {
+      left: calc((200px - 200px) / 2);
+      top: calc((200px - 1900px) / 2);
+      width: 440px;
+      height: 440px;
+      animation: rotate 45s reverse linear infinite;
+    }
+    .top_margin{
+      margin-top: 150px;
+      height: 150px;
+    }
+  }
+  @media (max-width: 767px) {
+    .row {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .col-lg-5 {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px; /* Add margin between columns */
+    }
+    
+    .roundlogo {
+      position: static; /* Remove absolute positioning */
+      margin: 10px auto; /* Center the logo */
+    }
+    
+    .inner,
+    .middle,
+    .outer {
+      position: relative; /* Reset position */
+      margin: 20px auto; /* Center the rings */
+      left: auto;
+      top: auto;
+      animation: none; /* Disable animation for smaller screens */
+    }
+
+    .inner {
+      left: calc((200px - 200px) / 2);
+      top: calc((200px - 540px) / 2);
+      width: 200px;
+      height: 200px;
+      animation: rotate 20s linear infinite;
+    }
+    .middle {
+      left: calc((200px - 200px) / 2);
+      top: calc((200px - 1100px) / 2);
+      width: 320px;
+      height: 320px;
+      animation: rotate 35s linear infinite;
+    }
+    
+    .outer {
+      left: calc((200px - 200px) / 2);
+      top: calc((200px - 1900px) / 2);
+      width: 440px;
+      height: 440px;
+      animation: rotate 45s reverse linear infinite;
+    }
+    .top_margin{
+      margin-top: 150px;
+      height: 150px;
+    }
+  }
+  @media(min-width: 320px)and (max-width: 575px) {
+    .row {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .col-lg-5 {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px; /* Add margin between columns */
+    }
+    
+    .roundlogo {
+      position: static; /* Remove absolute positioning */
+      margin: 10px auto; /* Center the logo */
+      width: 50px;
+      height: 50px;
+    }
+    
+    .inner,
+    .middle,
+    .outer {
+      position: relative; /* Reset position */
+      margin: 20px auto; /* Center the rings */
+      left: auto;
+      top: auto;
+      animation: none; /* Disable animation for smaller screens */
+    }
+
+    .inner {
+      left: calc((200px - 200px) / 2);
+      top: calc((200px - 400px) / 2);
+      width: 110px;
+      height: 110px;
+      animation: rotate 20s linear infinite;
+    }
+    .middle {
+      left: calc((200px - 200px) / 2);
+      top: calc((200px - 755px) / 2);
+      width: 210px;
+      height: 210px;
+      animation: rotate 35s linear infinite;
+    }
+    
+    .outer {
+      left: calc((200px - 200px) / 2);
+      top: calc((200px - 1330px) / 2);
+      width: 330px;
+      height: 330px;
+      animation: rotate 45s reverse linear infinite;
+    }
+    .top_margin{
+      margin-top: 150px;
+      height: 150px;
+    }
+  }
